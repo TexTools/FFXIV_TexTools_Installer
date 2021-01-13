@@ -49,9 +49,6 @@ OutFile "Install_TexTools.exe"
 Name "FFXIV TexTools"
 
  
-# For removing Start Menu shortcut in Windows 7
-RequestExecutionLevel user
- 
 # start default section
 Section "Install"
 
