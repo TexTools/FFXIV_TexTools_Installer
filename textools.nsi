@@ -1,8 +1,10 @@
 RequestExecutionLevel admin
 
+!addplugindir "NsisDotNetChecker\bin"
+
 !include "MUI.nsh"
 !include "FileAssociation.nsh"
-!include "DotNetChecker.nsh"
+!include "NsisDotNetChecker\nsis\DotNetChecker.nsh"
 
 !include LogicLib.nsh
 !include x64.nsh
@@ -48,9 +50,6 @@ Var StartMenuFolder
 OutFile "Install_TexTools.exe"
 Name "FFXIV TexTools"
 
- 
-# For removing Start Menu shortcut in Windows 7
-RequestExecutionLevel user
  
 # start default section
 Section "Install"
@@ -130,8 +129,8 @@ ${EndIf}
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ImageMaker" \
 					 "NoRepair" 0x1
 			
-	${registerExtension} "$\"$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe$\"" ".ttmp" "TexTools Mod File"
-	${registerExtension} "$\"$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe$\"" ".ttmp2" "TexTools2 Mod File"
+	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp" "TexTools Mod File"
+	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp2" "TexTools2 Mod File"
 	  
     # create the uninstaller
     WriteUninstaller "$INSTDIR\Uninstall.exe"		 
