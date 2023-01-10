@@ -10,7 +10,7 @@ RequestExecutionLevel admin
 !include x64.nsh
 
 !define MUI_PRODUCT "FFXIV TexTools"
-!define MUI_VERSION "2.2.1"
+!define MUI_VERSION "2.3.8.4"
 !define MUI_BRANDINGTEXT "FFXIV TexTools"
 
  
@@ -54,7 +54,7 @@ Name "FFXIV TexTools"
 # start default section
 Section "Install"
 
-	!insertmacro CheckNetFramework 472
+	!insertmacro CheckNetFramework 481
 	
  
     # set the installation directory as the destination for the following actions
@@ -65,24 +65,24 @@ Section "Install"
 	# VC Redistributables
 	
 	# 2019 is used by the FBX Converter
-	File "2019_redist.x86.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x86.exe"  /passive /norestart'	
+	File "2022_redist.x86.exe" 	
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x86.exe" /Q /passive /norestart'	
     Delete "$INSTDIR\FFXIV_TexTools\2019_redist.x86.exe"
 	
 	# 2012 is used by NotAssetCC
 	File "2012_redist.x86.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x86.exe"  /passive /norestart'	
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x86.exe" /install /quiet /norestart'	
     Delete "$INSTDIR\FFXIV_TexTools\2012_redist.x86.exe"
 	
 	
 	# Only install the 64 bit files if we're actually on a 64 bit machine.
 ${If} ${RunningX64}
-	File "2019_redist.x64.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x64.exe"  /passive /norestart'	
+	File "2022_redist.x64.exe" 	
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x64.exe" /Q /passive /norestart'	
     Delete "$INSTDIR\FFXIV_TexTools\2019_redist.x64.exe"
  
 	File "2012_redist.x64.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe"  /passive /norestart'
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe" /install /quiet /norestart'
     Delete "$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe"
 ${EndIf}  
 
