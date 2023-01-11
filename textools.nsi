@@ -54,7 +54,7 @@ Name "FFXIV TexTools"
 # start default section
 Section "Install"
 
-	!insertmacro CheckNetFramework 481
+	!insertmacro CheckNetFramework 48
 	
  
     # set the installation directory as the destination for the following actions
