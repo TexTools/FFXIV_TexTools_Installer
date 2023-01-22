@@ -67,11 +67,13 @@ Section "Install"
 	# 2022 is used by the FBX Converter
 	File "2022_redist.x86.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2022_redist.x86.exe" /install /quiet /norestart'	
+    Sleep 1000	
     Delete "$INSTDIR\FFXIV_TexTools\2022_redist.x86.exe"
 	
 	# 2012 is used by NotAssetCC
 	File "2012_redist.x86.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x86.exe" /install /quiet /norestart'	
+    Sleep 1000
     Delete "$INSTDIR\FFXIV_TexTools\2012_redist.x86.exe"
 	
 	
@@ -79,10 +81,12 @@ Section "Install"
 ${If} ${RunningX64}
 	File "2022_redist.x64.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2022_redist.x64.exe" /install /quiet /norestart'	
+    Sleep 1000	
     Delete "$INSTDIR\FFXIV_TexTools\2022_redist.x64.exe"
  
 	File "2012_redist.x64.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe" /install /quiet /norestart'
+    Sleep 1000	
     Delete "$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe"
 ${EndIf}  
 
