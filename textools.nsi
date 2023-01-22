@@ -64,10 +64,10 @@ Section "Install"
 	
 	# VC Redistributables
 	
-	# 2019 is used by the FBX Converter
+	# 2022 is used by the FBX Converter
 	File "2022_redist.x86.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x86.exe" /Q /passive /norestart'	
-    Delete "$INSTDIR\FFXIV_TexTools\2019_redist.x86.exe"
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2022_redist.x86.exe" /install /quiet /norestart'	
+    Delete "$INSTDIR\FFXIV_TexTools\2022_redist.x86.exe"
 	
 	# 2012 is used by NotAssetCC
 	File "2012_redist.x86.exe" 	
@@ -78,8 +78,8 @@ Section "Install"
 	# Only install the 64 bit files if we're actually on a 64 bit machine.
 ${If} ${RunningX64}
 	File "2022_redist.x64.exe" 	
-	ExecWait '"$INSTDIR\FFXIV_TexTools\2019_redist.x64.exe" /Q /passive /norestart'	
-    Delete "$INSTDIR\FFXIV_TexTools\2019_redist.x64.exe"
+	ExecWait '"$INSTDIR\FFXIV_TexTools\2022_redist.x64.exe" /install /quiet /norestart'	
+    Delete "$INSTDIR\FFXIV_TexTools\2022_redist.x64.exe"
  
 	File "2012_redist.x64.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2012_redist.x64.exe" /install /quiet /norestart'
