@@ -10,7 +10,7 @@ RequestExecutionLevel admin
 !include x64.nsh
 
 !define MUI_PRODUCT "FFXIV TexTools"
-!define MUI_VERSION "2.3.8.4"
+!define MUI_VERSION "2.3.8.5"
 !define MUI_BRANDINGTEXT "FFXIV TexTools"
 
  
