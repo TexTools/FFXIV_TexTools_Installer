@@ -145,10 +145,8 @@ function un.onInit
 	SetShellVarContext all
  
 	#Verify the uninstaller - last chance to back out
-	MessageBox MB_OKCANCEL "Permanantly remove ${APPNAME}?" IDOK next
+	MessageBox MB_OKCANCEL "Permanantly remove FFXIV TexTools?" IDOK
 		Abort
-	next:
-	!insertmacro VerifyUserIsAdmin
 functionEnd
 
 Section "Uninstall"
