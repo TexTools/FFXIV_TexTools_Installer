@@ -141,6 +141,16 @@ ${EndIf}
 SectionEnd
  
 # uninstaller section start
+function un.onInit
+	SetShellVarContext all
+ 
+	#Verify the uninstaller - last chance to back out
+	MessageBox MB_OKCANCEL "Permanantly remove ${APPNAME}?" IDOK next
+		Abort
+	next:
+	!insertmacro VerifyUserIsAdmin
+functionEnd
+
 Section "Uninstall"
 	
     # first, delete the uninstaller
