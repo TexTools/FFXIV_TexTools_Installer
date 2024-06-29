@@ -133,8 +133,9 @@ ${EndIf}
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ImageMaker" \
 					 "NoRepair" 0x1
 			
-	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp" "TexTools Mod File"
-	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp2" "TexTools2 Mod File"
+	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp" "TexTools Modpack File"
+	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".ttmp2" "TexTools2 Modpack File"
+	${registerExtension} "$INSTDIR\FFXIV_TexTools\FFXIV_TexTools.exe" ".pmp" "Penumbra Modpack File"
 	  
     # create the uninstaller
     WriteUninstaller "$INSTDIR\Uninstall.exe"		 
@@ -162,8 +163,9 @@ Section "Uninstall"
 	RMDir /r "$SMPROGRAMS\FFXIV TexTools"
 
 	# Unregister file extensions
-	${unregisterExtension} ".ttmp" "TexTools Mod File"
-	${unregisterExtension} ".ttmp2" "TexTools2 Mod File"
+	${unregisterExtension} ".ttmp" "TexTools Modpack File"
+	${unregisterExtension} ".ttmp2" "TexTools2 Modpack File"
+	${unregisterExtension} ".pmp" "Penumbra Modpack File"
 	
 	# Remove installation folder if it's empty.
     RMDir $INSTDIR
