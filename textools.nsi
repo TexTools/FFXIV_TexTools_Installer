@@ -64,7 +64,7 @@ Section "Install"
 	
 	# VC Redistributables
 	
-	# 2022 is used by the FBX Converter
+	# 2022 is used by the FBX Converter and TexConv
 	File "2022_redist.x86.exe" 	
 	ExecWait '"$INSTDIR\FFXIV_TexTools\2022_redist.x86.exe" /install /quiet /norestart'	
     Sleep 1000	
