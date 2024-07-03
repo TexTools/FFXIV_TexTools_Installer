@@ -43,6 +43,9 @@ Var StartMenuFolder
 !insertmacro MUI_PAGE_DIRECTORY 
 !insertmacro MUI_PAGE_STARTMENU "Application" $StartMenuFolder
 !insertmacro MUI_PAGE_INSTFILES
+
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
 #!insertmacro MUI_PAGE_STARTMENU "FFXIV TexTools" $StartMenuFolder
  
  
@@ -142,13 +145,6 @@ ${EndIf}
 SectionEnd
  
 # uninstaller section start
-function un.onInit
-	SetShellVarContext all
- 
-	#Verify the uninstaller - last chance to back out
-	MessageBox MB_OKCANCEL "Permanantly remove FFXIV TexTools?" IDOK
-		Abort
-functionEnd
 
 Section "Uninstall"
 	
