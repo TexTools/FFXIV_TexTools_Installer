@@ -1,6 +1,7 @@
 RequestExecutionLevel admin
 
 !addplugindir "NsisDotNetChecker\bin"
+!addplugindir "AccessControl\Plugins\i386-unicode"
 
 !include "MUI.nsh"
 !include "FileAssociation.nsh"
