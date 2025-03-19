@@ -142,6 +142,13 @@ ${EndIf}
 	  
     # create the uninstaller
     WriteUninstaller "$INSTDIR\Uninstall.exe"		 
+
+
+	# assign suitable permissions (Requires AccessControl Plugin)
+	AccessControl::SetOnFile "$INSTDIR\FFXIV_TexTools\converters" "(S-1-5-11)" "FullAccess"
+	AccessControl::SetOnFile "$INSTDIR\FFXIV_TexTools\Resources" "(S-1-5-11)" "FullAccess"
+	AccessControl::SetOnFile "$INSTDIR\FFXIV_TexTools\Skeletons" "(S-1-5-11)" "FullAccess"
+	Pop $0	
 SectionEnd
  
 # uninstaller section start
